@@ -1,0 +1,52 @@
+<header class="top-page-header">
+  <div class="nav">
+    <ul class="lists-right">
+      <% if user_signed_in? %>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <% else %>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+          <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      <% end %>
+    </ul>
+  </div>
+</header>
+
+<div class="title-contents">
+  <p class="service-title">MyCalender</p>
+</div>
+
+  <table>
+      <thead>
+        <tr>
+          <th id="prev">&laquo;</th>
+          <th id="title" colspan="5">2020/05</th>
+          <th id="next">&raquo;</th>
+        </tr>
+        <tr>
+          <th>Sun</th>
+          <th>Mon</th>
+          <th>Tue</th>
+          <th>Wed</th>
+          <th>Thu</th>
+          <th>Fri</th>
+          <th>Sat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%# <% @plans.each do |plan| %>
+          <%# <%= link_to plan_path(plan.id), class="subtitle" %> 
+        <%# <% end %>  
+      </tbody>
+      <tfoot>
+        <tr>
+          <td id="today" colspan="7">Today</td>
+        </tr>
+      </tfoot>
+    </table>
+    <div class='addtask-btn'>
+      <%= link_to new_plan_path, class: "addtask-btn-text" do %>
+      <p>予定を追加</p>
+      <%= image_tag 'addtasks.png' , size: '100x100' ,class: "add-task-icon" %>
+    <% end %>
+    </div>
+
