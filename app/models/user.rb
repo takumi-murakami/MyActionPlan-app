@@ -6,7 +6,7 @@ class User < ApplicationRecord
   # has_many :plans
 
   with_options presence: true do
-    validates :nickname
+    validates :nickname, :birthday
 
     with_options format: {with: /\A[ぁ-んァ-ン一-龥]/} do
       validates :last_name
@@ -17,8 +17,6 @@ class User < ApplicationRecord
       validates :last_name_kana
       validates :first_name_kana
     end
-
-    validates :birthday
   end
 
 end
