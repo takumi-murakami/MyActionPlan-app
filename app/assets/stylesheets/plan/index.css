@@ -127,16 +127,16 @@ body {
 .nav {
   font-size: 18px;
   display: flex;
-  /* justify-content: space-between; */
-  /* flex-wrap: wrap; */
-  /* width: 100%; */
-  /* padding: 5vh 0; */
+  justify-content: space-between; 
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 5vh 0;
 }
 
 .lists-right {
   display: flex;
   list-style: none;
-  /* align-items: flex-end; */
+  align-items: flex-end;
 }
 
 .logout {
@@ -156,8 +156,12 @@ body {
 }
 
 .logo {
-  font-size: 18px;
   padding: 2vh;
+  background-color: skyblue;
+}
+
+.top-title {
+  font-size:18px;
 }
 
 /* .calender {
@@ -169,6 +173,7 @@ table {
   border-collapse: collapse;
   border: 2px solid #eee;
   padding: 2vh;
+  margin: 0 auto;
 }
 
 thead,
