@@ -101,7 +101,7 @@ input, select {
     vertical-align:middle;
 }
 
-/* リセットcss */
+/* ここまでリセットcss */
 
 * {
   box-sizing: border-box;
@@ -115,6 +115,7 @@ body {
     Meiryo,
     sans-serif;
   font-size: 14px;
+  background-color: rgba(240, 197, 223, 0.795);
 }
 
 .top-page-header {
@@ -155,13 +156,20 @@ body {
   color: #333333;
 }
 
-.logo {
+.title-contents {
+  width: 100vw;
+  background-color: rgba(107, 103, 105, 0.158);
+  /* background-image: ; */
+  /* background-repeat: no-repeat; */
+  /* background-position: top center; */
+  text-shadow: 0 0 5px rgba(0,0,0,0);
   padding: 2vh;
-  background-color: skyblue;
 }
 
-.top-title {
-  font-size:18px;
+.service-title {
+  font-size: 8vh;
+  color: rgb(59, 57, 57);
+  text-align: center;
 }
 
 /* .calender {
@@ -174,16 +182,17 @@ table {
   border: 2px solid #eee;
   padding: 2vh;
   margin: 0 auto;
+  width: 70vw;
 }
 
 thead,
 tfoot {
-  background: rgb(118, 126, 109);
+  background: rgb(72, 149, 201);
 }
 
 th,
 td {
-  padding: 18px;
+  padding: 25px;
   text-align: center;
 }
 
@@ -212,4 +221,27 @@ td.today {
 #today {
   cursor: pointer;
   user-select: none; 
+}
+
+.addtask-btn {
+  width: 120px;
+  background: #3ccace;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 10px;
+}
+
+.addtask-btn-text {
+  color: #fff;
+  display: block;
+  text-decoration: none;
+  margin: 5 0;
+}
+
+.add-task-icon {
+  width: 60%;
+  height: 60%;
 }
