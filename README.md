@@ -21,26 +21,14 @@
 | title                  | string     | null: false                    |
 | text                   | text       | null: false                    |
 | genre_id               | integer    | null: false                    |
-| prefecture_id          | integer    | null: false                    |
-| action_date            | date       | null: false                    |
+| address                | string     | null: false                    |
+| date                   | date       | null: false                    |
+| begin_at               | time       | null: false                    |
+| closed_at              | time       | null: false                    |
 | user                   | references | null: false, foreign_key: true |
 
 - belongs_to :user
-- has_one :address
 <!-- - belongs_to :room -->
-
-## addresses テーブル
-
-| Column         | Type       | Options                        |
-| -------------- | ---------- | ------------------------------ |
-| postal_code    | string     | null: false                    |
-| prefecture_id  | integer    | null: false                    |
-| city_name      | string     | null: false                    |
-| block_name     | string     | null: false                    |
-| building_name  | string     |                                |
-| plan           | references | null: false, foreign_key: true |
-
-- belongs_to :plan
 
 <!-- 以下追加実装 -->
 ## rooms テーブル

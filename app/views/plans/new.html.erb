@@ -1,2 +1,91 @@
-<h1>予定の入力</h1>
-<div class="">
+    <div class='main-form-contents'>
+      <%= form_with model: @plan, url: plans_path, id: 'plan-form', class: 'plan-form-wrap', local: true, method: :post do |f| %>
+    
+        <%= render 'shared/error_messages', model: f.object %>
+
+        <div class='form-group'>
+          <div class='form-text-wrap'>
+            <label class="form-text">この予定のタイトル</label>
+          </div>
+          <%= f.text_field :title, class:'plan-title', id:'plan-name' %>
+        </div>
+
+        <div class='form-group'>
+          <div class='form-text-wrap'>
+            <label class="form-text">場所(郵便番号)</label>
+          </div>
+          <%= f.text_field :postal_code, class:"input-default", id:"postal-code", placeholder:"例）123-4567", maxlength:"8" %>
+        </div>
+        <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">住所</label>
+        </div>
+        <%= f.text_field :address, class:"input-default", id:"city", placeholder:"例）神奈川県横浜市緑区1-1-1建物ビル5階"%>
+        </div>
+        <div class='form-group'>
+          <div class='form-text-wrap'>
+            <label class="form-text">ジャンル選択</label>
+          </div>
+          <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"pran-genre"}) %>
+        </div>
+
+        <div class='form-group'>
+          <div class='form-date-wrap'>
+          <label class="form-text">開始日(日付)</label>
+          </div>
+            <%= raw sprintf(
+                f.date_select(
+                  :start_date,
+                  class:'select-date',
+                  id:"action-date",
+                  use_month_numbers: true,
+                  prompt:'--',
+                  start_year: 2020,
+                  end_year: (Time.now.year + 5),
+                  date_separator: '%s'),
+                "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+        </div>
+        <div class='form-group'>
+          <div class='form-datetime-wrap'>
+            <label class="form-text">開始時間</label>
+          </div>
+          <%= f.time_select(:begin_at, prompt:'--', class: 'scheduled-time', id: 'scheduled-date') %>
+        </div>
+
+         <div class='form-group'>
+          <div class='form-date-wrap'>
+          <label class="form-text">終了日(日付)</label>
+          </div>
+            <%= raw sprintf(
+                f.date_select(
+                  :end_date,
+                  class:'select-date',
+                  id:"action-date",
+                  use_month_numbers: true,
+                  prompt:'--',
+                  start_year: 2020,
+                  end_year: (Time.now.year + 5),
+                  date_separator: '%s'),
+                "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+        </div>
+
+        <div class='form-group'>
+          <div class='form-datetime-wrap'>
+            <label class="form-text">終了時間</label>
+          </div>
+          <%= f.time_select(:closed_at, prompt:'--', class: 'scheduled-time', id: 'scheduled-date') %>
+        </div>
+       
+      <div class='form-group'>
+          <div class='form-text-wrap'>
+            <label class="form-text">説明</label>
+          </div>
+          <%= f.text_area :text, class:'pran-text', id:'plan-info', placeholder:"予定の説明" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+
+      <div class="push-btn-contents">
+          <%= f.submit "確定" ,class:"push-btn" %>
+          <%=link_to 'もどる', root_path, class:"back-btn" %>
+      </div>
+      <% end %> 
+    </div>
