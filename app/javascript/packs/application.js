@@ -8,6 +8,9 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require("../calenders")
+//= require jquery
+//= require moment
+//= require fullcalendar
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -16,3 +19,12 @@ require("../calenders")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+// $(function () {
+//   function eventCalendar() {
+//       return $('#calendar').fullCalendar({});
+//   };
+//   function clearCalendar() {
+//       $('#calendar').html('');
+//   };
+// });

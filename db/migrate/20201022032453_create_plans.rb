@@ -6,10 +6,8 @@ class CreatePlans < ActiveRecord::Migration[6.0]
       t.integer    :genre_id,      null: false
       t.string     :postal_code,   null: false
       t.string     :address,       null: false
-      t.date       :start_date,    null: false
-      t.date       :end_date,      null: false
-      t.time       :begin_at,      null: false
-      t.time       :closed_at,     null: false
+      t.datetime   :start_date,    null: false
+      t.datetime   :end_date,      null: false
       t.references :user,          null: false, foreign_key: true
       t.timestamps 
     end 

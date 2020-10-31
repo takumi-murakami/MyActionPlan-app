@@ -5,7 +5,7 @@ class Plan < ApplicationRecord
   has_one_attached :image
 
   with_options presence: true do
-    validates :title, :text, :start_date, :end_date, :begin_at, :closed_at
+    validates :title, :text, :start_date, :end_date
   
     with_options numericality: { other_than: 1 } do
       validates :genre_id

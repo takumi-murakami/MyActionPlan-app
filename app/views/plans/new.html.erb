@@ -31,49 +31,34 @@
 
         <div class='form-group'>
           <div class='form-date-wrap'>
-          <label class="form-text">開始日(日付)</label>
+            <label class="form-text">開始日(日付)</label>
           </div>
-            <%= raw sprintf(
-                f.date_select(
+            <%= f.datetime_field(
                   :start_date,
+                  placeholder: "XXXX-XX-XX", 
                   class:'select-date',
                   id:"action-date",
                   use_month_numbers: true,
                   prompt:'--',
                   start_year: 2020,
                   end_year: (Time.now.year + 5),
-                  date_separator: '%s'),
-                "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
-        </div>
-        <div class='form-group'>
-          <div class='form-datetime-wrap'>
-            <label class="form-text">開始時間</label>
-          </div>
-          <%= f.time_select(:begin_at, prompt:'--', class: 'scheduled-time', id: 'scheduled-date') %>
+                  date_separator: '%s') %>
         </div>
 
-         <div class='form-group'>
+        <div class='form-group'>
           <div class='form-date-wrap'>
-          <label class="form-text">終了日(日付)</label>
+            <label class="form-text">終了日(日付)</label>
           </div>
-            <%= raw sprintf(
-                f.date_select(
-                  :end_date,
-                  class:'select-date',
-                  id:"action-date",
-                  use_month_numbers: true,
-                  prompt:'--',
-                  start_year: 2020,
-                  end_year: (Time.now.year + 5),
-                  date_separator: '%s'),
-                "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
-        </div>
-
-        <div class='form-group'>
-          <div class='form-datetime-wrap'>
-            <label class="form-text">終了時間</label>
-          </div>
-          <%= f.time_select(:closed_at, prompt:'--', class: 'scheduled-time', id: 'scheduled-date') %>
+          <%= f.datetime_field(
+                :end_date,
+                placeholder: "XXXX-XX-XX", 
+                class:'select-date',
+                id:"action-date",
+                use_month_numbers: true,
+                prompt:'--',
+                start_year: 2020,
+                end_year: (Time.now.year + 5),
+                date_separator: '%s') %>
         </div>
        
       <div class='form-group'>

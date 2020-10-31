@@ -39,10 +39,8 @@ ActiveRecord::Schema.define(version: 2020_10_22_080835) do
     t.integer "genre_id", null: false
     t.string "postal_code", null: false
     t.string "address", null: false
-    t.date "start_date", null: false
-    t.date "end_date", null: false
-    t.time "begin_at", null: false
-    t.time "closed_at", null: false
+    t.datetime "start_date", null: false
+    t.datetime "end_date", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
